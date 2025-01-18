@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SkillLink User Profile">
+    <meta name="author" content="Aripin Sihabudin">
+
+    <title>SkillLink - User Profile</title>
+
+    <!-- CSS FILES -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        /* Styling Navbar */
+        .navbar {
+            background-color: #000000 !important;
+        }
+
+        .navbar-brand img {
+            width: 150px;
+        }
+
+        .dropdown-menu-dark {
+            background-color: #000000 !important;
+        }
+
+        /* Styling Halaman Profil */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .profile-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #1f1f1f;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-avatar img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #000000;
+        }
+
+        .profile-avatar {
+            margin-right: 20px;
+        }
+
+        .profile-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .profile-role {
+            font-size: 16px;
+            color: #adb5bd;
+        }
+
+        .profile-info {
+            margin-top: 20px;
+        }
+
+        .profile-info-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #252525;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            border: 1px solid #000000;
+        }
+
+        .profile-info-icon {
+            font-size: 24px;
+            color: #0f6b3d;
+            margin-right: 15px;
+        }
+
+        .profile-info-text {
+            font-size: 16px;
+        }
+
+        .btn-edit-profile {
+            display: block;
+            margin: 20px auto;
+            background-color: #12844f;
+            color: #ffffff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .btn-edit-profile:hover {
+            background-color: #0f6b3d;
+            color: #ffffff;
+        }
+
+        /* Navbar Links Styling */
+        .navbar-nav .nav-link {
+            color: #ffffff;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: #3c3c7f;
+        }
+
+        .navbar-nav .dropdown-menu-dark {
+            background-color: #000000;
+        }
+
+        /* Search Bar Styling */
+        .search-form .form-control {
+            background-color: #000000;
+            color: #ffffff;
+            border: 1px solid #4a2e81;
+        }
+
+        .search-form .form-control::placeholder {
+            color: #adb5bd;
+        }
+
+        .search-form button {
+            background-color: #0f6b3d;
+            border: 1px solid #0f6b3d;
+        }
+
+        .search-form button:hover {
+            background-color: #0f6b3d;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+        <div class="container">
+            
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="create.html"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="project.html"></a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="notifications.html"></a>
+                    </li>
+                </ul>
+
+                <div class="dropdown ms-4">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Aripin
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="profileDropdown">
+                        <li><a class="dropdown-item" href="index.html">Home</a></li>
+                        <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+                        <li><a class="dropdown-item" href="logout.html">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="profile-container">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <img src="images/profile/pp.jpg" alt="Profile Picture">
+            </div>
+            <div>
+                <div class="profile-name">Aripin Sihabudin</div>
+                <div class="profile-role">AI Development</div>
+            </div>
+        </div>
+
+        <div class="profile-info">
+            <div class="profile-info-item">
+                <i class="bi bi-envelope profile-info-icon"></i>
+                <div class="profile-info-text">Email: sihabudinaripin@gmail.com</div>
+            </div>
+            <div class="profile-info-item">
+                <i class="bi bi-phone profile-info-icon"></i>
+                <div class="profile-info-text">Phone: +62 838 92508349</div>
+            </div>
+            <div class="profile-info-item">
+                <i class="bi bi-geo-alt profile-info-icon"></i>
+                <div class="profile-info-text">Location: Sukabumi, West Java, Indonesia</div>
+            </div>
+            <div class="profile-info-item">
+                <i class="bi bi-calendar-check profile-info-icon"></i>
+                <div class="profile-info-text">Joined: January 2023</div>
+            </div>
+            <div class="profile-info-item">
+                <i class="bi bi-laptop profile-info-icon"></i>
+                <div class="profile-info-text">Skills: Python, Java, Laravel, Web Development</div>
+            </div>
+        </div>
+
+        <button class="btn btn-edit-profile">Edit Profile</button>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

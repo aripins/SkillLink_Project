@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>SkillLink - Create</title>
+
+        <!-- CSS FILES -->        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Sono:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+                        
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="css/bootstrap-icons.css">
+
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        
+        <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+        <link href="css/SkillLink.css" rel="stylesheet">
+
+    </head>
+    
+    <body>
+
+        <main>
+
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand me-lg-5 me-0" href="index.html">
+                        <img src="images/SkillLink-logo.png" class="logo-image img-fluid" alt="SkillLink">
+                    </a>
+                    <a class="navbar-brand me-lg-5 me-0" href="index.html">
+                    </a>
+
+                    <form action="#" method="get" class="custom-form search-form flex-fill me-3" role="search">
+                        <div class="input-group input-group-lg">    
+                            <input name="search" type="search" class="form-control" id="search" placeholder="Search Profile or Project" aria-label="Search">
+
+                            <button type="submit" class="form-control" id="submit">
+                                <i class="bi-search"></i>
+                            </button>
+                        </div>
+                    </form>
+    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-lg-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link active" href="create.html">Create</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="project.html">Project</a>
+                            </li>
+    
+                            <li class="nav-item">
+                                <a class="nav-link" href="notifications.html">Notifications</a>
+                            </li>
+                        </ul>
+
+                        <div class="dropdown ms-4">
+                            <button class="btn btn-outline-light dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                Aripin
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="profileDropdown">
+                                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                                <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+                                <li><a class="dropdown-item" href="logout.html">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+
+            <header class="site-header d-flex flex-column justify-content-center align-items-center">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12 text-center">
+                            <h1 class="text-white">Create Your Project!</h1>
+
+                                <p class="text-white">Collaborate Anytime, Explore Your Favorite Projects.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+
+            <!-- Create Project Form Section -->
+<div class="container">
+    <div class="row">
+        <!-- Left Column (5 elements) -->
+        <div class="col-lg-6 col-md-12">
+            <div class="project-create-wrap p-4 bg-dark text-light rounded shadow-sm">
+
+                <!-- Project Title -->
+                <div class="mb-3">
+                    <label for="project-title" class="form-label">📌 Project Title</label>
+                    <input type="text" id="project-title" class="form-control bg-dark text-light border-light" placeholder="Enter a clear and concise title for your project" required>
+                </div>
+
+                <!-- Project Description -->
+                <div class="mb-3">
+                    <label for="project-description" class="form-label">📝 Project Description</label>
+                    <textarea id="project-description" class="form-control bg-dark text-light border-light" rows="" placeholder="Provide a detailed description of the project, including its objectives, scope, and expected outcomes" required></textarea>
+                </div>
+
+                <!-- Project Category -->
+                <div class="mb-3">
+                    <label for="project-category" class="form-label">🏷️ Project Category</label>
+                    <select id="project-category" class="form-select bg-dark text-light border-light">
+                        <option selected>Select a category...</option>
+                        <option value="web">Web Development</option>
+                        <option value="mobile">Mobile App Development</option>
+                        <option value="data">Data Science</option>
+                        <option value="design">UI/UX Design</option>
+                        <option value="cybersecurity">Cybersecurity</option>
+                        <option value="ml">Machine Learning</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <!-- Project Duration -->
+                <div class="mb-3">
+                    <label for="project-duration" class="form-label">⏱️ Project Duration</label>
+                    <input type="text" id="project-duration" class="form-control bg-dark text-light border-light" placeholder="Enter the expected duration (e.g., 2 months, 3 weeks)">
+                </div>
+
+                <!-- Number of Participants -->
+                <div class="mb-3">
+                    <label for="participants-number" class="form-label">👥 Number of Participants Needed</label>
+                    <input type="number" id="participants-number" class="form-control bg-dark text-light border-light" placeholder="Enter the maximum number of participants">
+                </div>
+
+                <!-- Benefit -->
+                <div class="mb-3">
+                    <label for="benefit" class="form-label">👥 Benefit</label>
+                    <textarea id="project-description" class="form-control bg-dark text-light border-light" rows="" placeholder="Enter the benefit for participant or collaborators joining this project (e.g., Relation, Certificate, etc.)" required></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column (5 elements) -->
+        <div class="col-lg-6 col-md-12">
+            <div class="project-create-wrap p-4 bg-dark text-light rounded shadow-sm">
+
+                <!-- Project Type -->
+                <div class="mb-3">
+                    <label for="project-type" class="form-label">💼 Project Type</label>
+                    <select id="project-type" class="form-select bg-dark text-light border-light" onchange="togglePaymentField()">
+                        <option selected>Select type...</option>
+                        <option value="paid">Paid</option>
+                        <option value="unpaid">Unpaid</option>
+                    </select>
+                </div>
+
+                <!-- Payment Amount Per Participant -->
+                <div class="mb-3 d-none" id="payment-amount-container">
+                    <label for="payment-amount" class="form-label">💰 Payment Per Participant</label>
+                    <input type="number" id="payment-amount" class="form-control bg-dark text-light border-light" placeholder="Enter the payment amount per participant (e.g., $500)">
+                </div>
+
+                <!-- Total Project Budget -->
+                <div class="mb-3 d-none" id="total-budget-container">
+                    <label for="total-budget" class="form-label">💵 Total Project Budget</label>
+                    <input type="number" id="total-budget" class="form-control bg-dark text-light border-light" placeholder="Enter the total budget for the project (e.g., $5000)">
+                </div>
+
+                <!-- Upload CV -->
+                <div class="mb-3">
+                    <label for="cv-upload" class="form-label">📄 Upload CV</label>
+                    <input type="file" id="cv-upload" class="form-control bg-dark text-light border-light" accept=".pdf,.doc,.docx">
+                </div>
+
+                <!-- Upload Portfolio -->
+                <div class="mb-3">
+                    <label for="portfolio-upload" class="form-label">🌐 Upload Portfolio</label>
+                    <input type="file" id="portfolio-upload" class="form-control bg-dark text-light border-light" accept=".pdf,.jpg,.jpeg,.png">
+                </div>
+
+                <!-- Upload Certificate -->
+                <div class="mb-3">
+                    <label for="certificate-upload" class="form-label">🏅 Upload Certificate of Skills</label>
+                    <input type="file" id="certificate-upload" class="form-control bg-dark text-light border-light" accept=".pdf,.jpg,.jpeg,.png">
+                </div>
+
+                <!-- Submit Button (Centered) -->
+                <div class="d-flex justify-content-center mt-4">
+                    <button type="submit" class="btn btn-light w-50">✅ Submit Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+    function togglePaymentField() {
+        var projectType = document.getElementById('project-type').value;
+        var paymentAmountContainer = document.getElementById('payment-amount-container');
+        var totalBudgetContainer = document.getElementById('total-budget-container');
+
+        // Show or hide payment fields based on the selected project type
+        if (projectType === 'paid') {
+            paymentAmountContainer.classList.remove('d-none');
+            totalBudgetContainer.classList.remove('d-none');
+        } else {
+            paymentAmountContainer.classList.add('d-none');
+            totalBudgetContainer.classList.add('d-none');
+        }
+    }
+</script>
+
+
+
+            <section class="about-section section-padding" id="section_2">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-8 col-12 mx-auto">
+                            <div class="pb-5 mb-5">
+                                <div class="section-title-wrap mb-4">
+                                    <h4 class="section-title">Why SkillLink Exists?</h4>
+                                </div>
+
+                                <p>At SkillLink Network, we believe in the power of collaboration and innovation to solve real-world problems. Our journey began with a simple question:</p>
+        
+        <p><strong>"What if we could connect IT professionals and enthusiasts worldwide to build amazing projects together?"</strong></p>
+
+        <p>Founded by a passionate team of IT experts, SkillLink was created to bridge the gap between talent and opportunity. We noticed that many individuals with exceptional skills lacked the right platform to showcase their abilities, collaborate on impactful projects, or gain recognition for their expertise.</p>
+        
+        <p>Our platform is more than just a network—it's a thriving community where:</p>
+        <ul>
+            <li>Developers, designers, data analysts, and other IT specialists unite.</li>
+            <li>Creativity meets practicality to deliver cutting-edge solutions.</li>
+            <li>Ideas transform into successful, real-world projects.</li>
+        </ul>
+
+        <p>We envision a future where no great idea goes unrealized, and no talent goes unnoticed. Together, let’s shape the future of technology through collaboration and shared knowledge.</p>
+
+        <p><strong>Join us at SkillLink Network, where IT dreams come to life.</strong></p>
+        
+        <!-- Video Section -->
+<div class="d-flex justify-content-center">
+    <video class="about-image mt-5 img-fluid" src="images/project/animation.mp4" autoplay loop muted>
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+        

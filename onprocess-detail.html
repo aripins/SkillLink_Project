@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>On Process - Project Detail</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/SkillLink.css">
+
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom Dark Theme CSS -->
+    <style>
+        /* Global Background and Text Color */
+        body {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        /* Form and Task List Styling */
+        .bg-white {
+            background-color: #1a1a1a !important;
+            color: #ffffff;
+        }
+
+        .list-group-item {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border: 1px solid #333333;
+        }
+
+        /* Input File Styling */
+        input[type="file"] {
+            background-color: #007bff;
+            color: #ffffff;
+            border: 1px solid #555555;
+        }
+
+        /* Button Styling */
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+        }
+
+        /* Footer Styling */
+        .site-footer {
+            background-color: #111111;
+            color: #ffffff;
+        }
+
+        /* Chart Centering */
+        #progressChart {
+            width: 50% !important;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<main>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand me-lg-5 me-0" href="index.html">
+                <img src="images/SkillLink-logo.png" class="logo-image img-fluid" alt="SkillLink">
+            </a>
+            <form action="#" method="get" class="custom-form search-form flex-fill me-3" role="search">
+                <div class="input-group input-group-lg">
+                    <input name="search" type="search Profile or Project" class="form-control" id="search" placeholder="Search Profile or Project" aria-label="Search">
+                    <button type="submit" class="form-control" id="submit">
+                        <i class="bi-search"></i>
+                    </button>
+                </div>
+            </form>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="create.html">Create</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="project.html">Project</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="notifications.html">Notifications</a>
+                    </li>
+
+                 <!-- Profile Button with Dropdown -->
+                <div class="dropdown ms-4">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Aripin
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="profileDropdown">
+                        <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                        <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+                        <li><a class="dropdown-item" href="logout.html">Logout</a></li>
+                    </ul>
+                </div>
+                    </div>
+                </div>
+            </nav>
+
+    <!-- Header Section -->
+    <header class="site-header d-flex flex-column justify-content-center align-items-center">
+        <div class="container text-center">
+            <h2 class="mb-0">Project Progress - On Process</h2>
+            <p class="text-white">Progress may be slow, but it's still progress. Keep moving!</p>
+        </div>
+    </header>
+
+    <!-- Update Progress Section -->
+    <section class="update-progress-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+
+                <!-- Task List and Progress -->
+                <div class="col-lg-8 col-12">
+                    <h4 class="mb-4">Update Your Progress</h4>
+                    <form id="task-form" class="bg-white p-4 rounded shadow-sm">
+                        <div class="mb-3">
+                            <ul class="list-group" id="task-list"></ul>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary w-50" onclick="updateProgress()">✅ Update Progress</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Progress Chart -->
+                <div class="col-lg-8 col-12 mt-5">
+                    <h4 class="mb-4">Project Progress</h4>
+                    <div class="bg-white p-4 rounded shadow-sm">
+                        <canvas id="progressChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Benefits Section -->
+                <div class="col-lg-8 col-12 mt-5">
+                    <h4 class="mb-4">Your Benefits</h4>
+                    <div id="benefit-info" class="bg-white p-4 rounded shadow-sm"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- JavaScript Files -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/custom.js"></script>
+
+<!-- Chart.js Script for Progress -->
+<script>
+    const tasks = [
+        { id: 1, name: 'UI Design', isPaid: false },
+        { id: 2, name: 'Backend API', isPaid: true },
+        { id: 3, name: 'Database Schema', isPaid: false },
+        { id: 4, name: 'Frontend Development', isPaid: false },
+        { id: 5, name: 'Testing & QA', isPaid: true },
+        { id: 6, name: 'Documentation', isPaid: false },
+        { id: 7, name: 'Code Review', isPaid: false },
+        { id: 8, name: 'Deployment', isPaid: true },
+        { id: 9, name: 'User Feedback', isPaid: false }
+    ];
+
+    const taskListElement = document.getElementById('task-list');
+    let completedTasks = 0;
+
+    function loadTasks() {
+        taskListElement.innerHTML = '';
+        tasks.forEach(task => {
+            const listItem = document.createElement('li');
+            listItem.classList.add('list-group-item');
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.id = 'task-' + task.id;
+            checkbox.classList.add('form-check-input', 'me-2');
+            checkbox.addEventListener('change', function () {
+                toggleFileInput(task.id);
+                updateProgress();
+            });
+
+            const label = document.createElement('label');
+            label.setAttribute('for', 'task-' + task.id);
+            label.textContent = task.name;
+
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.id = 'file-upload-' + task.id;
+            fileInput.classList.add('form-control', 'mt-2');
+            fileInput.disabled = true;
+
+            listItem.appendChild(checkbox);
+            listItem.appendChild(label);
+            listItem.appendChild(fileInput);
+            taskListElement.appendChild(listItem);
+        });
+    }
+
+    function toggleFileInput(taskId) {
+        const checkbox = document.getElementById('task-' + taskId);
+        const fileInput = document.getElementById('file-upload-' + taskId);
+        fileInput.disabled = !checkbox.checked;
+    }
+
+    function updateProgress() {
+        completedTasks = tasks.filter(task => document.getElementById('task-' + task.id).checked).length;
+        updateChart((completedTasks / tasks.length) * 100);
+        updateBenefits();
+    }
+
+    function updateChart(progressPercent) {
+        progressChart.data.datasets[0].data = [progressPercent, 100 - progressPercent];
+        progressChart.update();
+    }
+
+    function updateBenefits() {
+        const completedPaidTasks = tasks.filter(task => task.isPaid && document.getElementById('task-' + task.id).checked).length;
+        const completedNonPaidTasks = tasks.filter(task => !task.isPaid && document.getElementById('task-' + task.id).checked).length;
+
+        const benefitInfo = document.getElementById('benefit-info');
+        benefitInfo.innerHTML = completedPaidTasks ? `<p>🤑 Earned money from ${completedPaidTasks} paid task(Process--System will check first your worked).</p>` : '';
+        benefitInfo.innerHTML += completedNonPaidTasks ? `<p>🎓 Certificate from ${completedNonPaidTasks} non-paid task(Process--System will check first your worked).</p>` : '';
+    }
+
+    var ctx = document.getElementById('progressChart').getContext('2d');
+    var progressChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Completed', 'Pending'],
+            datasets: [{
+                data: [0, 100],
+                backgroundColor: ['#28a745', '#dc3545']
+            }]
+        }
+    });
+
+    window.onload = loadTasks;
+</script>
+
+</body>
+
+</html>
